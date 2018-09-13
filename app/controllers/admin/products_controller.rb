@@ -1,5 +1,6 @@
 class Admin::ProductsController < ApplicationController
 
+  #Product actions
   def index
     @products = Product.order(id: :desc).all
   end
