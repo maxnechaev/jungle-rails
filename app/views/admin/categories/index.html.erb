@@ -13,12 +13,18 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Category Name</th>
+          <th>Category name</th>
         </tr>
       </thead>
       <tbody>
-        <%= render @categories %>
-      </tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td>
+            <%= category.name %>
+          </td>
+        <tr>
+      <% end %>
+    </tbody>
     </table>
 
   </div>
