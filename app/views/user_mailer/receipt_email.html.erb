@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+      <h2>Good time of the day, <%= @user.first_name %>! </h2>
+      <h3>And we thank you for shopping in Jungle! <h3>
+      <p>We received your order No. #{@order.id} containing the following products:.</p>
+      <br><br>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="2">Product</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order.line_items.each do |item| %>
+            <%= render 'item', product: item.product, quantity: item[:quantity].to_i %>
+          <% end %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="3">
+              Total for the order:
+            </th>
+            <th>
+              <%= @order.total_cents / 100.0 %>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+      <p><em>Your order is on the way and will be delivered to you shortly</em></p>
+      <p>Have a great day and pleasze do not forget to come to us again!</p>
+
+  </body>
+</html>

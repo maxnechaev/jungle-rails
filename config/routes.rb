@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :application_mailers
   root to: 'products#index'
 
   resources :products, only: [:index, :show]

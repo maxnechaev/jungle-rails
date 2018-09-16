@@ -1,14 +1,14 @@
 class Admin::CategoriesController < ApplicationController
 
-  def index_category
-    @categories = Category.order(id: :asc).all
+  def index
+    @categories = Category.order(id: :desc).all
   end
 
-  def new_category
+  def new
     @category = Category.new
   end
 
-  def create_category
+  def create
     @category = Category.new(category_params)
 
     if @category.save
