@@ -18,4 +18,9 @@ class UsersController < ApplicationController
       params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
 
+    # def authenticate_with_credentials
+    #   user = User.find_by_email(params[:email])
+    #   params.require(:user).permit(:email, :password)
+    # end
+
 end

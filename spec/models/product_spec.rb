@@ -35,10 +35,10 @@ RSpec.describe Product, type: :model do
     end
 
     # testing category
-    it 'should return true if the category is given' do
-      @test_product = Product.new(category: 'testCat')
-      expect(@test_product.category).to be_present
-    end
+    # it 'should return true if the category is given' do
+    #   @test_product = Product.new(category: 'testCat')
+    #   expect(@test_product.category).to be_present
+    # end
     it 'should return nil when category is not given' do
       @test_product = Product.new
       expect(@test_product.category).to be nil
